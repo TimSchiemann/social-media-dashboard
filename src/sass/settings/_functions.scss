@@ -1,0 +1,19 @@
+@use "sass:math";
+@use "variables";
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return math.div($number, ($number * 0 + 1));
+    }
+    @return $number;
+}
+
+@function rem-calc($value) {
+    $remValue: math.div(strip-unit($value), 16) + rem; 
+    @return $remValue;
+}
+
+@function colors($variables) {
+    @debug $variables;
+    @return map-get(variables.$colors, $variables);
+}

@@ -1,0 +1,16 @@
+@use "../settings";
+@use "variables";
+
+.wrapper {
+    padding: {
+        right: variables.$wrapper-padding-right;
+        left: variables.$wrapper-padding-left;
+    }
+    margin: {
+        right: auto;
+        left: auto;
+    }
+    max: {
+        width: settings.rem-calc(1336px);
+    }
+}
