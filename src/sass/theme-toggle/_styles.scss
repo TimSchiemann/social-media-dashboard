@@ -1,0 +1,46 @@
+@use "../utils/functions" as utils;
+
+.toggle {
+    appearance: none;
+    width: utils.rem-calc(62px);
+    height: utils.rem-calc(32px);
+    display: inline-block;
+    position: relative;
+    border-radius: 50px;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: {
+        color: utils.colors("positive");
+    } 
+    transition: {
+        property: background-color;
+        timing-function: ease;
+        duration: 0.3s;
+    }
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: utils.rem-calc(28px);
+        height: utils.rem-calc(28px);
+        background: utils.colors("negative");
+        left: 2px;
+        top: 2px;
+        border: {
+            radius: 50%;
+        }
+        white-space: nowrap;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        transition: {
+            property: all;
+            timing-function: cubic-bezier(0.3, 1.5, 0.7, 1);
+            duration: 0.3s;
+        }
+    }
+    &:checked:before {
+        left: utils.rem-calc(32px);
+    }
+  }

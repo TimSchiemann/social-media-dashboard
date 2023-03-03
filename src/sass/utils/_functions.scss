@@ -13,7 +13,6 @@
     @return $remValue;
 }
 
-@function colors($variables) {
-    @debug $variables;
-    @return map-get(variables.$colors, $variables);
+@function colors($variable) {
+    @return map-get(variables.$colors, $variable);
 }

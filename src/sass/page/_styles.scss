@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../utils";
 @use "variables";
 
 .wrapper {
@@ -11,6 +11,6 @@
         left: auto;
     }
     max: {
-        width: settings.rem-calc(1336px);
+        width: utils.rem-calc(1336px);
     }
 }
