@@ -13,6 +13,17 @@
     @return $remValue;
 }
 
-@function colors($variable) {
-    @return map-get(variables.$colors, $variable);
+@function color($name, $category: null, $nested-name: null) {
+    // Retrieve a first level color
+    @if ($category == null) and ($nested-name == null) {
+        @return map-get(variables.$colors, $name);
+    }
+    // Retrieve a second level color
+    @else if ($category != null) and ($nested-name == null) {
+        @return map-get(map-get(variables.$colors, $name), $category);
+    }
+    // Retrieve a third level color
+    @else {
+        @return map-get(map-get(map-get(variables.$colors, $name), $category), $nested-name);
+    }
 }
