@@ -12,7 +12,7 @@
     border: none;
     cursor: pointer;
     background: {
-        color: utils.color("positive");
+        color: utils.color(light-theme, toggle);
     } 
     transition: {
         property: background-color;
@@ -26,7 +26,7 @@
         z-index: 2;
         width: utils.rem-calc(28px);
         height: utils.rem-calc(28px);
-        background: utils.color("negative");
+        background: utils.color(white);
         left: 2px;
         top: 2px;
         border: {
