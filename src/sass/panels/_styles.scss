@@ -1,2 +1,23 @@
+@use "../utils";
 @use "variables";
 
+.panels {
+    display: flex;
+    gap: utils.rem-calc(24px);
+}
+
+.panel {
+    aspect-ratio: 1 / 1;
+    padding: {
+        top: utils.rem-calc(50px);
+        right: utils.rem-calc(100px);
+        bottom: utils.rem-calc(50px);
+        left: utils.rem-calc(100px);
+    }
+    border: {
+        radius: utils.rem-calc(10px);
+    }
+    background: {
+        color: variables.$background-color;
+    }
+}
