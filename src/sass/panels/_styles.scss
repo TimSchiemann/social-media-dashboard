@@ -7,17 +7,40 @@
 }
 
 .panel {
+    border: {
+        top: utils.rem-calc(4px) solid;
+        image-slice: 1;
+    }
     aspect-ratio: 1 / 1;
     padding: {
-        top: utils.rem-calc(50px);
-        right: utils.rem-calc(100px);
-        bottom: utils.rem-calc(50px);
-        left: utils.rem-calc(100px);
+        top: utils.rem-calc(32px);
+        right: utils.rem-calc(64px);
+        bottom: utils.rem-calc(24px);
+        left: utils.rem-calc(64px);
     }
     border: {
-        radius: utils.rem-calc(10px);
+        radius: utils.rem-calc(4px);
     }
     background: {
         color: variables.$background-color;
+    }
+    &.youtube {
+        border: {
+            color: utils.color(socials, youtube);
+        }
+    }
+    &.twitter {
+        border: {
+            color: utils.color(socials, twitter);
+        }
+    }
+    &.facebook {
+        border: {
+            color: utils.color(socials, facebook);
+        }
+    }
+    &.instagram {
+        clip-path: inset(0 round 4px);
+        border-image-source: linear-gradient( to right, utils.color(socials, instagram-yellow), utils.color(socials, instagram-pink));
     }
 }
