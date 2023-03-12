@@ -1,6 +1,13 @@
 @use "../utils";
 @use "variables";
 
+:root {
+    --font-family: 'Inter', sans-serif;
+    font: {
+        family: var(--font-family);
+    }
+}
+
 .wrapper {
     padding: {
         right: variables.$wrapper-padding-right;
